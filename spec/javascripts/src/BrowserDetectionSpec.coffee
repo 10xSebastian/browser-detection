@@ -9,7 +9,7 @@ knownBrowser = [
 describe "Browser Detection", ->
 
   it "register itself", ->
-    expect(window.BrowserDetection).toBeDefined()
+    expect(BrowserDetection).toBeDefined()
 
   for browser in knownBrowser
     it "detects #{browser[1]} #{browser[2]}", ->
