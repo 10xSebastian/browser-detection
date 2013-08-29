@@ -1,0 +1,8 @@
+language: ruby
+notifications:
+  email: false
+rvm:
+  - 1.9.3
+before_script:
+  - "sh compile.sh"
+script: bundle exec rake jasmine:ci
