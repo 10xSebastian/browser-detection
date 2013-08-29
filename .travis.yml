@@ -8,4 +8,4 @@ before_script:
 before_install:
   - npm install coffee-script
   - npm install jasmine-node
-script: jasmine-node
+script: jasmine-node spec/
