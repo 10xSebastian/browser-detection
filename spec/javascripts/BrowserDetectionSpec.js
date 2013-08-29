@@ -7,7 +7,7 @@
   describe("Browser Detection", function() {
     var browser, _i, _len, _results;
     it("register itself", function() {
-      return expect(window.BrowserDetection).toBeDefined();
+      return expect(BrowserDetection).toBeDefined();
     });
     _results = [];
     for (_i = 0, _len = knownBrowser.length; _i < _len; _i++) {
