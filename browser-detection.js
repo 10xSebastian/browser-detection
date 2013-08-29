@@ -74,15 +74,19 @@ Here are some examples of userAgent outputs
       var _ref;
       return (_ref = this.agent) != null ? _ref : navigator.userAgent;
     },
-    supports: function(browsers) {
-      var browser, result, supported, _i, _len;
+    isSupported: function(browsers) {
+      var browser, result, supported, _i, _len,
+        _this = this;
+      console.log(browsers);
       if (!(browsers instanceof Array)) {
         browsers = Array(browsers);
       }
       result = false;
       for (_i = 0, _len = browsers.length; _i < _len; _i++) {
         browser = browsers[_i];
-        supported = browser.name.toLowerCase() === BrowserDetection.name().toLowerCase() && Number(BrowserDetection.major()) >= Number(browser.version);
+        supported = browser.name.toLowerCase() === BrowserDetection.name().toLowerCase() && (!(browser.version != null) || (function() {
+          return BrowserDetection.major() >= Number(browser.version);
+        })());
         if (supported) {
           result = true;
         }

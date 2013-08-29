@@ -18,14 +18,25 @@
         expect(BrowserDetection.version()).toBe(browser[2]);
         return expect(BrowserDetection.major()).toBe(browser[3]);
       });
-      _results.push(it("responds to supports() for " + browser[1] + " " + browser[2], function() {
+      _results.push(it("responds to isSupported() for " + browser[1] + " " + browser[2], function() {
         BrowserDetection.setAgent(browser[0]);
-        return expect(BrowserDetection.supports([
+        expect(BrowserDetection.isSupported([
           {
             name: browser[1],
             version: browser[3]
           }
         ])).toBe(true);
+        expect(BrowserDetection.isSupported([
+          {
+            name: browser[1]
+          }
+        ])).toBe(true);
+        return expect(BrowserDetection.isSupported([
+          {
+            name: browser[1],
+            version: browser[3] + 0.1
+          }
+        ])).toBe(false);
       }));
     }
     return _results;

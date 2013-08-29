@@ -18,6 +18,8 @@ describe "Browser Detection", ->
       expect(BrowserDetection.version()).toBe browser[2]
       expect(BrowserDetection.major()).toBe browser[3]
 
-    it "responds to supports() for #{browser[1]} #{browser[2]}", ->
+    it "responds to isSupported() for #{browser[1]} #{browser[2]}", ->
       BrowserDetection.setAgent browser[0]
-      expect(BrowserDetection.supports([{name: browser[1], version: browser[3]}])).toBe true
+      expect(BrowserDetection.isSupported([{name: browser[1], version: browser[3]}])).toBe true
+      expect(BrowserDetection.isSupported([{name: browser[1]}])).toBe true
+      expect(BrowserDetection.isSupported([{name: browser[1], version: browser[3]+0.1}])).toBe false

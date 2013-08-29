@@ -66,12 +66,13 @@ Here are some examples of userAgent outputs
 
   getAgent: -> @agent ? navigator.userAgent
 
-  supports: (browsers)->
+  isSupported: (browsers)->
+    console.log browsers
     browsers = Array(browsers) unless browsers instanceof Array
     result = false
     for browser in browsers
       supported = browser.name.toLowerCase() is BrowserDetection.name().toLowerCase() and 
-        Number(BrowserDetection.major()) >= Number(browser.version)
+        (!browser.version? or do => BrowserDetection.major() >= Number(browser.version))
       result = true if supported
     return result
   
