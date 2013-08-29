@@ -69,4 +69,3 @@ DEPENDENCIES
   haml
   jasmine (~> 1.3.2)
   rake (~> 10.1.0)
-  selenium-webdriver
