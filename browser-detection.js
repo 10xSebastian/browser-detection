@@ -77,7 +77,6 @@ Here are some examples of userAgent outputs
     isSupported: function(browsers) {
       var browser, result, supported, _i, _len,
         _this = this;
-      console.log(browsers);
       if (!(browsers instanceof Array)) {
         browsers = Array(browsers);
       }

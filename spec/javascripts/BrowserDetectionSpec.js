@@ -12,32 +12,35 @@
     _results = [];
     for (_i = 0, _len = knownBrowser.length; _i < _len; _i++) {
       browser = knownBrowser[_i];
-      it("detects " + browser[1] + " " + browser[2], function() {
-        BrowserDetection.setAgent(browser[0]);
-        expect(BrowserDetection.name()).toBe(browser[1]);
-        expect(BrowserDetection.version()).toBe(browser[2]);
-        return expect(BrowserDetection.major()).toBe(browser[3]);
-      });
-      _results.push(it("responds to isSupported() for " + browser[1] + " " + browser[2], function() {
-        BrowserDetection.setAgent(browser[0]);
-        expect(BrowserDetection.isSupported([
-          {
-            name: browser[1],
-            version: browser[3]
-          }
-        ])).toBe(true);
-        expect(BrowserDetection.isSupported([
-          {
-            name: browser[1]
-          }
-        ])).toBe(true);
-        return expect(BrowserDetection.isSupported([
-          {
-            name: browser[1],
-            version: browser[3] + 0.1
-          }
-        ])).toBe(false);
-      }));
+      _results.push((function(browser) {
+        console.log(browser);
+        it("detects " + browser[1] + " " + browser[2], function() {
+          BrowserDetection.setAgent(browser[0]);
+          expect(BrowserDetection.name()).toBe(browser[1]);
+          expect(BrowserDetection.version()).toBe(browser[2]);
+          return expect(BrowserDetection.major()).toBe(browser[3]);
+        });
+        return it("responds to isSupported() for " + browser[1] + " " + browser[2], function() {
+          BrowserDetection.setAgent(browser[0]);
+          expect(BrowserDetection.isSupported([
+            {
+              name: browser[1],
+              version: browser[3]
+            }
+          ])).toBe(true);
+          expect(BrowserDetection.isSupported([
+            {
+              name: browser[1]
+            }
+          ])).toBe(true);
+          return expect(BrowserDetection.isSupported([
+            {
+              name: browser[1],
+              version: browser[3] + 0.1
+            }
+          ])).toBe(false);
+        });
+      })(browser));
     }
     return _results;
   });

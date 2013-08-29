@@ -67,7 +67,6 @@ Here are some examples of userAgent outputs
   getAgent: -> @agent ? navigator.userAgent
 
   isSupported: (browsers)->
-    console.log browsers
     browsers = Array(browsers) unless browsers instanceof Array
     result = false
     for browser in browsers
