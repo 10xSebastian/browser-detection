@@ -11,4 +11,5 @@ How to use
   BrowserDetection.major() // 29
   BrowserDetection.isSupported({name: "Chrome"}) // true
   BrowserDetection.isSupported({name: "Chrome", version: 29}) // true
+  BrowserDetection.isSupported([{name: "Chrome", version: 29},{name: "Firefox", version: 10}]) // true
 ```
