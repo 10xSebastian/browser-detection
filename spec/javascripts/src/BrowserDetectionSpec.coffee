@@ -1,4 +1,5 @@
 knownBrowser = [
+  ["Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko/20100101 Firefox/12.0;", "Internet Explorer", "11.0", 11],
   ["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36", "Chrome", "29.0.1547.57", 29],
   ["Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:23.0) Gecko/20100101 Firefox/23.0", "Firefox", "23.0", 23],
   ["Opera/9.80 (Macintosh; Intel Mac OS X 10.8.4) Presto/2.12.388 Version/12.16", "Opera", "12.16", 12],
@@ -12,8 +13,9 @@ describe "Browser Detection", ->
     expect(BrowserDetection).toBeDefined()
 
   for browser in knownBrowser
+    
     do (browser)->
-      console.log browser
+      
       it "detects #{browser[1]} #{browser[2]}", ->
         BrowserDetection.setAgent browser[0]
         expect(BrowserDetection.name()).toBe browser[1]

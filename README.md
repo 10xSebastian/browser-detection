@@ -20,4 +20,8 @@ Currently supported browsers
 - Firefox <= 23
 - Opera <= 12
 - Safari <= 6
-- Internet Explorer <= 10
+- Internet Explorer <= 11
+
+Release notes
+-----------------
+* 1.0.1 Support Internet Explorer 11

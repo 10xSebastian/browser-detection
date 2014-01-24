@@ -8,6 +8,7 @@ it also provides a "isSupported" check in the format [{name: "NaMe (case insense
 Here are some examples of userAgent outputs
  
   InternetExplorer
+    Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko/20100101 Firefox/12.0;
     Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1;
     Mozilla/5.0 (Windows; U; MSIE 9.0; WIndows NT 9.0; en-US))
     Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0;)
@@ -56,7 +57,10 @@ Here are some examples of userAgent outputs
     @getAgent().match(/Version\/\d*\.*\d*\.*\d*/).join().replace(/Version\//, "")
 
   detectIEVersion: ->
-    @getAgent().match(/MSIE \d*\.*\d*/).join().replace(/MSIE /, "")
+    if @getAgent().match(/Windows.*?rv:.*?\) like Gecko?/)
+      @getAgent().match(/rv:\d+\.\d+/).join().replace(/rv:/, '')
+    else
+      @getAgent().match(/MSIE \d*\.*\d*/).join().replace(/MSIE /, "")
 
   detectOperaVersion: ->
     if (match = @getAgent().match(/Version\/\d+\.\d+/))?
@@ -80,9 +84,9 @@ Here are some examples of userAgent outputs
 
   name: ->
     return "Chrome" if @getAgent().match(/Chrome\/\d*\.*\d*\.*\d*\.*\d*/)
-    return "Firefox" if @getAgent().match(/Firefox\/\d*\.*\d*/)
+    return "Firefox" if @getAgent().match(/Firefox\/\d*\.*\d*/) and not @getAgent().match(/like Gecko/)
     return "Safari" if @getAgent().match(/Version\/\d*\.*\d*\.*\d* Safari/)
-    return "Internet Explorer" if @getAgent().match(/MSIE \d*\.*\d*/)
+    return "Internet Explorer" if @getAgent().match(/MSIE \d*\.*\d*/) or @getAgent().match(/Windows.*?rv:.*?\) like Gecko?/)
     return "Opera" if @getAgent().match(/^Opera/)
     return "UKNOWN"
 
