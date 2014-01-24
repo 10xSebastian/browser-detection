@@ -13,3 +13,11 @@ How to use
   BrowserDetection.isSupported({name: "Chrome", version: 29}) // true
   BrowserDetection.isSupported([{name: "Chrome", version: 29},{name: "Firefox", version: 10}]) // true
 ```
+
+Currently supported browsers
+-----------------
+- Chrome <= 29
+- Firefox <= 23
+- Opera <= 12
+- Safari <= 6
+- Internet Explorer <= 10
