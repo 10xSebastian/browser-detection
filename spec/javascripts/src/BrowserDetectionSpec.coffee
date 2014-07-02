@@ -13,17 +13,17 @@ describe "Browser Detection", ->
     expect(BrowserDetection).toBeDefined()
 
   for browser in knownBrowser
-    
+
     do (browser)->
-      
+
       it "detects #{browser[1]} #{browser[2]}", ->
         BrowserDetection.setAgent browser[0]
         expect(BrowserDetection.name()).toBe browser[1]
         expect(BrowserDetection.version()).toBe browser[2]
         expect(BrowserDetection.major()).toBe browser[3]
 
-      it "responds to isSupported() for #{browser[1]} #{browser[2]}", ->
+      it "responds to match() for #{browser[1]} #{browser[2]}", ->
         BrowserDetection.setAgent browser[0]
-        expect(BrowserDetection.isSupported([{name: browser[1], version: browser[3]}])).toBe true
-        expect(BrowserDetection.isSupported([{name: browser[1]}])).toBe true
-        expect(BrowserDetection.isSupported([{name: browser[1], version: browser[3]+0.1}])).toBe false
+        expect(BrowserDetection.match([{name: browser[1], version: browser[3]}])).toBe true
+        expect(BrowserDetection.match([{name: browser[1]}])).toBe true
+        expect(BrowserDetection.match([{name: browser[1], version: browser[3]+0.1}])).toBe false

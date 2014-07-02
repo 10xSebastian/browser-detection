@@ -19,20 +19,20 @@
           expect(BrowserDetection.version()).toBe(browser[2]);
           return expect(BrowserDetection.major()).toBe(browser[3]);
         });
-        return it("responds to isSupported() for " + browser[1] + " " + browser[2], function() {
+        return it("responds to match() for " + browser[1] + " " + browser[2], function() {
           BrowserDetection.setAgent(browser[0]);
-          expect(BrowserDetection.isSupported([
+          expect(BrowserDetection.match([
             {
               name: browser[1],
               version: browser[3]
             }
           ])).toBe(true);
-          expect(BrowserDetection.isSupported([
+          expect(BrowserDetection.match([
             {
               name: browser[1]
             }
           ])).toBe(true);
-          return expect(BrowserDetection.isSupported([
+          return expect(BrowserDetection.match([
             {
               name: browser[1],
               version: browser[3] + 0.1
