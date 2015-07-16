@@ -45,7 +45,7 @@ Here are some examples of userAgent outputs
     Opera/9.50 (X11; Linux x86_64; U; pl)
 ###
 
-@BrowserDetection=
+window.BrowserDetection=
 
   detectChromeVersion: ->
     @getAgent().match(/Chrome\/\d*\.*\d*\.*\d*\.*\d*/).join().replace(/Chrome\//, "")
