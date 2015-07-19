@@ -24,4 +24,5 @@ Currently supported browsers
 
 Release notes
 -----------------
+* 1.0.3 Patch for messed up version management: 'isSupported' is the interface again
 * 1.0.1 Support Internet Explorer 11
