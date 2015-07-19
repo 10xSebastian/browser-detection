@@ -7,12 +7,27 @@ If you want to enable some functionalities of your Web-App just for some browser
 How to use
 -----------------
 ```
-  BrowserDetection.name() // "Chrome"
-  BrowserDetection.version() // "29.0.1547.57"
-  BrowserDetection.major() // 29
+  var browserSupported = BrowserDetection.match([
+    {
+      name: "Chrome",
+      version: 29
+    },{
+      name: "Opera",
+      name: 12,
+    }
+  ]);
+
+  if(browserSupported) {
+    initYourFeature();
+  }
+
   BrowserDetection.match({name: "Chrome"}) // true
   BrowserDetection.match({name: "Chrome", version: 29}) // true
   BrowserDetection.match([{name: "Chrome", version: 29},{name: "Firefox", version: 10}]) // true
+
+  BrowserDetection.name() // "Chrome"
+  BrowserDetection.version() // "29.0.1547.57"
+  BrowserDetection.major() // 29
 ```
 
 Browsers supported/tested
