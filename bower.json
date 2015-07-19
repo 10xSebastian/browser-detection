@@ -1,7 +1,7 @@
 {
   "name": "BrowserDetection",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "main": "browser-detection.js",
-  "description": "Javascript library for detecting the browser (navigator name) and version",
+  "description": "Javascript library for detecting the browser (navigator name) and version. Provides method to bind features to a set of supported browsers/versions.",
   "license": "GPL v2"
 }

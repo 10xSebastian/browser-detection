@@ -1,7 +1,8 @@
-BrowserDetection [![Build Status](https://travis-ci.org/spape/browser-detection.png)](https://travis-ci.org/spape/browser-detection)
+BrowserDetection
 =================
 
 Javascript library for detecting the browser (navigator name) and version.
+If you want to enable some functionalities of your Web-App just for some browser/version combinations user `BrowserDetection.match`.
 
 How to use
 -----------------
@@ -14,7 +15,7 @@ How to use
   BrowserDetection.match([{name: "Chrome", version: 29},{name: "Firefox", version: 10}]) // true
 ```
 
-Currently supported browsers
+Browsers supported/tested
 -----------------
 - Chrome <= 29
 - Firefox <= 23
