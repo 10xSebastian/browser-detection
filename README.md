@@ -26,4 +26,5 @@ Browsers supported/tested
 Release notes
 -----------------
 * 2.0.0 Change API: 'isSupported' becomes 'match'
+* 1.0.3 Patch to fix messed up version management: 'isSupported' is the interface again
 * 1.0.1 Support Internet Explorer 11
