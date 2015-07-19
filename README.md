@@ -2,7 +2,7 @@ BrowserDetection
 =================
 
 Javascript library for detecting the browser (navigator name) and version.
-If you want to enable some functionalities of your Web-App just for some browser/version combinations user `BrowserDetection.match`.
+If you want to enable some functionalities of your Web-App just for some browser/version combinations use `BrowserDetection.match`.
 
 How to use
 -----------------
