@@ -1,0 +1,14 @@
+{
+  "name": "browser-detection",
+  "version": "2.0.0",
+  "description": "Javascript library for detecting the browser (navigator name) and version. Provides method to bind features to a set of supported browsers/versions.",
+  "main": "browser-detection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Sebastian Pape",
+    "url": "https://github.com/pape-io"
+  },
+  "license": "GPL v2"
+}
